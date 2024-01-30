@@ -5,6 +5,7 @@ void main() {
   runApp(const MaterialApp(
     title: 'Navigation Basics',
     home: LoginView(),
+    debugShowCheckedModeBanner: false,
   ));
 }
 
