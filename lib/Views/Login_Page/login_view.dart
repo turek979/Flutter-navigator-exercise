@@ -26,18 +26,26 @@ class _LoginViewState extends State<LoginView> {
                 height: 129,
               ),
               const SizedBox(height: 21),
-              Text(
-                'Sign in',
-                style: TextStyle(
-                  fontWeight: FontWeight.w700,
-                  fontSize: 30,
-                  color: AppColors.appPurple,
-                ),
+              Row(
+                children: [
+                  Text(
+                    'Sign in',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w700,
+                      fontSize: 30,
+                      color: AppColors.appPurple,
+                    ),
+                  ),
+                  const Spacer()
+                ],
               ),
               const SizedBox(height: 46),
               TextFormField(
                 decoration: InputDecoration(
-                  prefixIcon: Image.asset(Images.userLogo),
+                  prefixIcon: Padding(
+                    padding: const EdgeInsets.only(right: 11),
+                    child: Image.asset(Images.userLogo),
+                  ),
                   hintText: 'Email or User Name',
                   hintStyle: const TextStyle(
                       fontSize: 15,
@@ -46,19 +54,61 @@ class _LoginViewState extends State<LoginView> {
                       shadows: <Shadow>[
                         Shadow(
                             offset: Offset(0, 4),
-                            blurRadius: 4.4,
+                            blurRadius: 4.9,
                             color: Color.fromRGBO(0, 0, 0, 0.25))
                       ]),
                   border: OutlineInputBorder(
                       borderRadius: const BorderRadius.all(Radius.circular(15)),
-                      borderSide: BorderSide(color: AppColors.appBorderPurple, width: 2)),
+                      borderSide: BorderSide(
+                          color: AppColors.appBorderPurple, width: 2)),
                   focusedBorder: OutlineInputBorder(
                       borderRadius: const BorderRadius.all(Radius.circular(15)),
-                      borderSide: BorderSide(color: AppColors.appBorderPurple, width: 2)),
+                      borderSide: BorderSide(
+                          color: AppColors.appBorderPurple, width: 2)),
                   enabledBorder: OutlineInputBorder(
                       borderRadius: const BorderRadius.all(Radius.circular(15)),
-                      borderSide: BorderSide(color: AppColors.appBorderPurple, width: 2)),
+                      borderSide: BorderSide(
+                          color: AppColors.appBorderPurple, width: 2)),
                 ),
+              ),
+              const SizedBox(height: 40),
+              TextFormField(
+                decoration: InputDecoration(
+                  prefixIcon: Padding(
+                    padding: const EdgeInsets.only(right: 11),
+                    child: Image.asset(Images.padlockLogo),
+                  ),
+                  suffixIcon: Image.asset(Images.eyeLogo),
+                  hintText: 'Password',
+                  hintStyle: const TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w400,
+                      color: Color.fromRGBO(0, 0, 0, 0.3)),
+                  border: OutlineInputBorder(
+                      borderRadius: const BorderRadius.all(Radius.circular(15)),
+                      borderSide: BorderSide(
+                          color: AppColors.appBorderPurple, width: 2)),
+                  focusedBorder: OutlineInputBorder(
+                      borderRadius: const BorderRadius.all(Radius.circular(15)),
+                      borderSide: BorderSide(
+                          color: AppColors.appBorderPurple, width: 2)),
+                  enabledBorder: OutlineInputBorder(
+                      borderRadius: const BorderRadius.all(Radius.circular(15)),
+                      borderSide: BorderSide(
+                          color: AppColors.appBorderPurple, width: 2)),
+                ),
+              ),
+              const SizedBox(height: 40),
+              Row(
+                children: [
+                  const Spacer(),
+                  Text('Forget Password?',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w700,
+                        fontSize: 15,
+                        color: AppColors.appPurple,
+                      )),
+                ],
               ),
               const SizedBox(height: 40),
               ElevatedButton(
@@ -82,6 +132,30 @@ class _LoginViewState extends State<LoginView> {
                       fontWeight: FontWeight.w700),
                 ),
               ),
+              Padding(
+                padding: const EdgeInsets.only(left: 80, right: 80, top: 112),
+                child: Row(
+                  children: [
+                    Text(
+                      "Don't have account ?",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 15,
+                        color: AppColors.appPurple,
+                      ),
+                    ),
+                    const SizedBox(width: 4),
+                    Text(
+                      'Sign Up',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w700,
+                        fontSize: 15,
+                        color: AppColors.appPurple,
+                      ),
+                    ),
+                  ],
+                ),
+              )
             ],
           ),
         ),
