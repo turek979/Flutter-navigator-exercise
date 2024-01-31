@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_login_exercise/Views/Register_Page/register_view.dart';
 import 'package:flutter_login_exercise/util/images.dart';
+import 'package:flutter_login_exercise/util/app_colors.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -18,17 +19,54 @@ class _LoginViewState extends State<LoginView> {
           padding: const EdgeInsets.all(20.0),
           child: Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 129, top: 42, bottom: 21),
-                child: Image.asset(
-                  Images.imageLogo,
-                  width: 129,
-                  height: 129,
+              const SizedBox(height: 42),
+              Image.asset(
+                Images.imageLogo,
+                width: 129,
+                height: 129,
+              ),
+              const SizedBox(height: 21),
+              Text(
+                'Sign in',
+                style: TextStyle(
+                  fontWeight: FontWeight.w700,
+                  fontSize: 30,
+                  color: AppColors.appPurple,
                 ),
               ),
-              const Text('Sign in'),
+              const SizedBox(height: 46),
+              TextFormField(
+                decoration: InputDecoration(
+                  prefixIcon: Image.asset(Images.userLogo),
+                  hintText: 'Email or User Name',
+                  hintStyle: const TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w400,
+                      color: Color.fromRGBO(0, 0, 0, 0.3),
+                      shadows: <Shadow>[
+                        Shadow(
+                            offset: Offset(0, 4),
+                            blurRadius: 4.4,
+                            color: Color.fromRGBO(0, 0, 0, 0.25))
+                      ]),
+                  border: OutlineInputBorder(
+                      borderRadius: const BorderRadius.all(Radius.circular(15)),
+                      borderSide: BorderSide(color: AppColors.appBorderPurple, width: 2)),
+                  focusedBorder: OutlineInputBorder(
+                      borderRadius: const BorderRadius.all(Radius.circular(15)),
+                      borderSide: BorderSide(color: AppColors.appBorderPurple, width: 2)),
+                  enabledBorder: OutlineInputBorder(
+                      borderRadius: const BorderRadius.all(Radius.circular(15)),
+                      borderSide: BorderSide(color: AppColors.appBorderPurple, width: 2)),
+                ),
+              ),
+              const SizedBox(height: 40),
               ElevatedButton(
-                child: const Text('Open route'),
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: AppColors.appLightPurple,
+                    minimumSize: const Size(390, 50),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15))),
                 onPressed: () {
                   Navigator.push(
                     context,
@@ -36,6 +74,13 @@ class _LoginViewState extends State<LoginView> {
                         builder: (context) => const RegisterView()),
                   );
                 },
+                child: const Text(
+                  'Sing in',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 15,
+                      fontWeight: FontWeight.w700),
+                ),
               ),
             ],
           ),
