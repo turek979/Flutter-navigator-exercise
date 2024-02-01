@@ -1,4 +1,3 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_login_exercise/util/images.dart';
 import 'package:flutter_login_exercise/util/textfield.dart';
@@ -57,10 +56,10 @@ class RegisterView extends StatelessWidget {
                   const SizedBox(height: 40),
                   const CustomTextField('Email', Images.mailLogo),
                   const SizedBox(height: 40),
-                  const CustomTextFieldSuffix('Password',
+                  CustomTextFieldSuffix('Password',
                       suffix: Images.eyeLogo, prefix: Images.padlockLogo),
                   const SizedBox(height: 40),
-                  const CustomTextFieldSuffix('Confirm Password',
+                  CustomTextFieldSuffix('Confirm Password',
                       suffix: Images.eyeLogo, prefix: Images.padlockLogo),
                   const SizedBox(height: 60),
                   ElevatedButton(

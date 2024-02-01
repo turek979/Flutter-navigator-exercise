@@ -7,4 +7,5 @@ class Images {
   static const eclipseLogo = "assets/png/Ellipse.png";
   static const mailLogo = "assets/png/mail-logo.png";
   static const vector = "assets/png/Vector.png";
+  static const landingScreen = "assets/png/landing_screen.png";
 }

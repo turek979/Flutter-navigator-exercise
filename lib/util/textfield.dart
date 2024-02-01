@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_login_exercise/util/app_colors.dart';
 
-class CustomTextField extends StatelessWidget{
-
+class CustomTextField extends StatelessWidget {
   final String hintText;
   final String prefix;
 
@@ -26,13 +25,16 @@ class CustomTextField extends StatelessWidget{
               color: Color.fromRGBO(0, 0, 0, 0.3)),
           border: OutlineInputBorder(
               borderRadius: const BorderRadius.all(Radius.circular(15)),
-              borderSide: BorderSide(color: AppColors.appBorderPurple, width: 2)),
+              borderSide:
+                  BorderSide(color: AppColors.appBorderPurple, width: 2)),
           focusedBorder: OutlineInputBorder(
               borderRadius: const BorderRadius.all(Radius.circular(15)),
-              borderSide: BorderSide(color: AppColors.appBorderPurple, width: 2)),
+              borderSide:
+                  BorderSide(color: AppColors.appBorderPurple, width: 2)),
           enabledBorder: OutlineInputBorder(
               borderRadius: const BorderRadius.all(Radius.circular(15)),
-              borderSide: BorderSide(color: AppColors.appBorderPurple, width: 2)),
+              borderSide:
+                  BorderSide(color: AppColors.appBorderPurple, width: 2)),
         ),
       ),
     );

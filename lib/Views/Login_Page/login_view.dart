@@ -81,7 +81,7 @@ class _LoginViewState extends State<LoginView> {
                   ),
                 ),
                 const SizedBox(height: 40),
-                const CustomTextFieldSuffix('Password',
+                CustomTextFieldSuffix('Password',
                     suffix: Images.eyeLogo, prefix: Images.padlockLogo),
                 const SizedBox(height: 40),
                 Row(
