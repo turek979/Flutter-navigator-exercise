@@ -11,4 +11,6 @@ class Images {
   static const logoutlogo = "assets/png/logout-logo.png";
   static const user2Logo = "assets/png/user2 -logo.png";
   static const settingsLogo = "assets/png/settings - logo.png";
+  static const checkMark = "assets/png/check-mark.png";
+  static const xMark = "assets/png/x.png";
 }

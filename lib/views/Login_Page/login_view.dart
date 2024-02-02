@@ -129,7 +129,8 @@ class _LoginViewState extends State<LoginView> {
                           MaterialPageRoute(
                               builder: (context) => const HomeView()),
                         );
-                        SharedPreferences pref = await SharedPreferences.getInstance();
+                        SharedPreferences pref =
+                            await SharedPreferences.getInstance();
                         await pref.setBool('isLogged', true);
                       }
                     },

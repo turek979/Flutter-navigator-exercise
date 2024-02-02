@@ -6,14 +6,14 @@ import 'package:flutter_login_exercise/views/Home_Page/home_view.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-void main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  SharedPreferences prefs =await SharedPreferences.getInstance();
-  var isLogged =prefs.getBool('isLogged');
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  var isLogged = prefs.getBool('isLogged');
   print(isLogged);
   runApp(MaterialApp(
     title: 'Navigation Basics',
-    home: isLogged==true?HomeView():LoginView(),
+    home: isLogged == true ? HomeView() : LoginView(),
     debugShowCheckedModeBanner: false,
   ));
 }

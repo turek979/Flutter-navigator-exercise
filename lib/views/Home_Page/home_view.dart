@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_login_exercise/Views/Login_Page/login_view.dart';
 import 'package:flutter_login_exercise/util/app_colors.dart';
 import 'package:flutter_login_exercise/util/images.dart';
+import 'package:flutter_login_exercise/widgets/addpost.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class HomeView extends StatelessWidget {
@@ -15,7 +16,14 @@ class HomeView extends StatelessWidget {
         children: [
           SingleChildScrollView(
             child: Column(
-              children: [],
+              children: [
+                FloatingActionButton(onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => AddPostWidget()),
+                  );
+                }),
+              ],
             ),
           ),
           Spacer(),

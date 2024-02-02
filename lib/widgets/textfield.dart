@@ -22,16 +22,13 @@ class CustomTextField extends StatelessWidget {
             color: Color.fromRGBO(0, 0, 0, 0.3)),
         border: OutlineInputBorder(
             borderRadius: const BorderRadius.all(Radius.circular(15)),
-            borderSide:
-                BorderSide(color: AppColors.appBorderPurple, width: 2)),
+            borderSide: BorderSide(color: AppColors.appBorderPurple, width: 2)),
         focusedBorder: OutlineInputBorder(
             borderRadius: const BorderRadius.all(Radius.circular(15)),
-            borderSide:
-                BorderSide(color: AppColors.appBorderPurple, width: 2)),
+            borderSide: BorderSide(color: AppColors.appBorderPurple, width: 2)),
         enabledBorder: OutlineInputBorder(
             borderRadius: const BorderRadius.all(Radius.circular(15)),
-            borderSide:
-                BorderSide(color: AppColors.appBorderPurple, width: 2)),
+            borderSide: BorderSide(color: AppColors.appBorderPurple, width: 2)),
         contentPadding: EdgeInsets.symmetric(vertical: 10),
       ),
     );
