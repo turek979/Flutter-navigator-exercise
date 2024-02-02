@@ -1,6 +1,6 @@
-import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_login_exercise/Views/Login_Page/login_view.dart';
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter_login_exercise/util/images.dart';
 import 'package:page_transition/page_transition.dart';
 
@@ -22,7 +22,7 @@ class SplashScreen extends StatelessWidget {
         decoration: const BoxDecoration(
             image: DecorationImage(image: AssetImage(Images.imageLogo))),
       ),
-      nextScreen: const LoginView(),
+      nextScreen: LoginView(),
       splashIconSize: 250,
       splashTransition: SplashTransition.fadeTransition,
       pageTransitionType: PageTransitionType.topToBottom,

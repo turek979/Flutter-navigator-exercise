@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_login_exercise/util/images.dart';
-import 'package:flutter_login_exercise/util/textfield.dart';
-import 'package:flutter_login_exercise/util/textfieldsuffix.dart';
+import 'package:flutter_login_exercise/widgets/textfield.dart';
+import 'package:flutter_login_exercise/widgets/textfieldsuffix.dart';
 import 'package:flutter_login_exercise/util/app_colors.dart';
 
 class RegisterView extends StatelessWidget {

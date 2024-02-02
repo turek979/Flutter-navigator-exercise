@@ -5,9 +5,10 @@ class CustomTextFieldSuffix extends StatefulWidget {
   final String hintText;
   final String prefix;
   final String suffix;
+  final GlobalKey<FormState>? formKey;
 
   CustomTextFieldSuffix(this.hintText,
-      {super.key, required this.suffix, required this.prefix});
+      {super.key, required this.suffix, required this.prefix, this.formKey});
 
   @override
   State<CustomTextFieldSuffix> createState() => _CustomTextFieldSuffixState();
@@ -15,13 +16,28 @@ class CustomTextFieldSuffix extends StatefulWidget {
 
 class _CustomTextFieldSuffixState extends State<CustomTextFieldSuffix> {
   var boolValue = true;
+  late final GlobalKey<FormState> _formKey;
+
+  @override
+  void initState() {
+    super.initState();
+    _formKey = widget.formKey ?? GlobalKey<FormState>(); // Updated this line
+  }
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: 390,
-      height: 50,
+    return Form(
+      key: _formKey,
       child: TextFormField(
+        validator: (value) {
+          if (value == null || value.isEmpty) {
+            return 'Please enter Password';
+          } else if (value == 'qwe') {
+            return null;
+          } else {
+            return 'Password is incorrect';
+          }
+        },
         obscureText: boolValue,
         decoration: InputDecoration(
           prefixIcon: Padding(
@@ -52,6 +68,10 @@ class _CustomTextFieldSuffixState extends State<CustomTextFieldSuffix> {
               borderRadius: const BorderRadius.all(Radius.circular(15)),
               borderSide:
                   BorderSide(color: AppColors.appBorderPurple, width: 2)),
+          errorBorder: OutlineInputBorder(
+              borderRadius: const BorderRadius.all(Radius.circular(15)),
+              borderSide: BorderSide(color: Colors.red, width: 2)),
+          contentPadding: EdgeInsets.symmetric(vertical: 10),
         ),
       ),
     );
