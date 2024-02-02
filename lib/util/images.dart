@@ -8,4 +8,7 @@ class Images {
   static const mailLogo = "assets/png/mail-logo.png";
   static const vector = "assets/png/Vector.png";
   static const landingScreen = "assets/png/landing_screen.png";
+  static const logoutlogo = "assets/png/logout-logo.png";
+  static const user2Logo = "assets/png/user2 -logo.png";
+  static const settingsLogo = "assets/png/settings - logo.png";
 }

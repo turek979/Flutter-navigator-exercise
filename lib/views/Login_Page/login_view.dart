@@ -2,11 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_login_exercise/Views/Register_Page/register_view.dart';
 import 'package:flutter_login_exercise/util/images.dart';
 import 'package:flutter_login_exercise/util/app_colors.dart';
+import 'package:flutter_login_exercise/views/Home_Page/home_view.dart';
 import 'package:flutter_login_exercise/widgets/textfieldsuffix.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-class LoginView extends StatelessWidget {
+class LoginView extends StatefulWidget {
   LoginView({super.key});
 
+  @override
+  State<LoginView> createState() => _LoginViewState();
+}
+
+class _LoginViewState extends State<LoginView> {
   final GlobalKey<FormState> emailFormKey = GlobalKey<FormState>();
   final GlobalKey<FormState> passwordFormKey = GlobalKey<FormState>();
 
@@ -114,15 +121,16 @@ class LoginView extends StatelessWidget {
                         minimumSize: const Size(390, 50),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(15))),
-                    onPressed: () {
+                    onPressed: () async {
                       if (emailFormKey.currentState!.validate() &
                           passwordFormKey.currentState!.validate()) {
-                        // Validation passed, navigate to another page
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const RegisterView()),
+                              builder: (context) => const HomeView()),
                         );
+                        SharedPreferences pref = await SharedPreferences.getInstance();
+                        await pref.setBool('isLogged', true);
                       }
                     },
                     child: const Text(
