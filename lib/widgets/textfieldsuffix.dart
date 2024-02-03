@@ -21,7 +21,7 @@ class _CustomTextFieldSuffixState extends State<CustomTextFieldSuffix> {
   @override
   void initState() {
     super.initState();
-    _formKey = widget.formKey ?? GlobalKey<FormState>(); // Updated this line
+    _formKey = widget.formKey ?? GlobalKey<FormState>();
   }
 
   @override

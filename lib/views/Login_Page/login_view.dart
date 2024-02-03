@@ -16,6 +16,7 @@ class LoginView extends StatefulWidget {
 class _LoginViewState extends State<LoginView> {
   final GlobalKey<FormState> emailFormKey = GlobalKey<FormState>();
   final GlobalKey<FormState> passwordFormKey = GlobalKey<FormState>();
+  bool loginPassword = false;
 
   @override
   Widget build(BuildContext context) {
@@ -53,10 +54,13 @@ class _LoginViewState extends State<LoginView> {
                     validator: (value) {
                       if (value == null || value.isEmpty) {
                         return 'Please enter Email or username';
+                        // loginPassword = true;
                       } else if (value == 'turek') {
                         return null;
+                        // loginPassword = false;
                       } else {
                         return 'Email or Username is incorrect';
+                        // loginPassword = true;
                       }
                     },
                     decoration: InputDecoration(

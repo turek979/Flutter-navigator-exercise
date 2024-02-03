@@ -52,9 +52,10 @@ class RegisterView extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 46),
-                  const CustomTextField('Full Name', Images.userLogo),
+                  CustomTextField(
+                      hintText: 'Full Name', prefix: Images.userLogo),
                   const SizedBox(height: 40),
-                  const CustomTextField('Email', Images.mailLogo),
+                  CustomTextField(hintText: 'Email', prefix: Images.mailLogo),
                   const SizedBox(height: 40),
                   CustomTextFieldSuffix('Password',
                       suffix: Images.eyeLogo, prefix: Images.padlockLogo),

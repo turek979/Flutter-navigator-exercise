@@ -4,8 +4,9 @@ import 'package:flutter_login_exercise/util/app_colors.dart';
 class CustomTextField extends StatelessWidget {
   final String hintText;
   final String prefix;
+  final List<Shadow>? shadows;
 
-  const CustomTextField(this.hintText, this.prefix, {super.key});
+  const CustomTextField({required this.hintText, required this.prefix, this.shadows = null, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +17,8 @@ class CustomTextField extends StatelessWidget {
           child: Image.asset(prefix),
         ),
         hintText: hintText,
-        hintStyle: const TextStyle(
+        hintStyle: TextStyle(
+            shadows: shadows,
             fontSize: 15,
             fontWeight: FontWeight.w400,
             color: Color.fromRGBO(0, 0, 0, 0.3)),

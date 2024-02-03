@@ -4,6 +4,8 @@ import 'package:flutter_login_exercise/util/app_colors.dart';
 import 'package:flutter_login_exercise/util/images.dart';
 import 'package:flutter_login_exercise/widgets/addpost.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter_login_exercise/widgets/postfield.dart';
+import 'package:sqflite/sqflite.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -14,19 +16,34 @@ class HomeView extends StatelessWidget {
         child: Scaffold(
       body: Column(
         children: [
+          PostField(),
+          Spacer(),
           SingleChildScrollView(
             child: Column(
               children: [
-                FloatingActionButton(onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => AddPostWidget()),
-                  );
-                }),
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Align(
+                    alignment: Alignment.bottomRight,
+                    child: FloatingActionButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => AddPostWidget()),
+                        );
+                      },
+                      child: Text(
+                        '+',
+                        style: TextStyle(
+                            fontSize: 40, fontWeight: FontWeight.w400),
+                      ),
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
-          Spacer(),
           Align(
             alignment: FractionalOffset.bottomCenter,
             child: Container(
