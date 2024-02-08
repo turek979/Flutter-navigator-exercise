@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_login_exercise/util/images.dart';
 import 'package:flutter_login_exercise/util/app_colors.dart';
 import 'package:sqflite/sqflite.dart';
+import 'package:path/path.dart';
+
 
 class AddPostWidget extends StatelessWidget {
   const AddPostWidget({super.key});

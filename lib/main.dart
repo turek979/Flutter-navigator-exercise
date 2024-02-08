@@ -11,6 +11,9 @@ void main() async {
   SharedPreferences prefs = await SharedPreferences.getInstance();
   var isLogged = prefs.getBool('isLogged');
   print(isLogged);
+
+
+
   runApp(MaterialApp(
     title: 'Navigation Basics',
     home: isLogged == true ? HomeView() : LoginView(),
@@ -18,6 +21,15 @@ void main() async {
   ));
 }
 
+class PostData {
+  final int id;
+  final String postContent;
+
+  const PostData({
+    required this.id,
+    required this.postContent,
+  });
+}
 // class SplashScreen extends StatelessWidget {
 //   const SplashScreen({super.key});
 //

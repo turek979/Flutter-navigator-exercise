@@ -6,6 +6,8 @@ import 'package:flutter_login_exercise/widgets/addpost.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_login_exercise/widgets/postfield.dart';
 import 'package:sqflite/sqflite.dart';
+import 'package:path/path.dart';
+
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
