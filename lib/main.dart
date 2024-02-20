@@ -16,7 +16,7 @@ void main() async {
 
   runApp(MaterialApp(
     title: 'Navigation Basics',
-    home: isLogged == true ? HomeView() : LoginView(),
+    home: isLogged == true ? SplashScreen() : LoginView(),
     debugShowCheckedModeBanner: false,
   ));
 }
@@ -30,20 +30,20 @@ class PostData {
     required this.postContent,
   });
 }
-// class SplashScreen extends StatelessWidget {
-//   const SplashScreen({super.key});
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return AnimatedSplashScreen(
-//       splash: Container(
-//         decoration: const BoxDecoration(
-//             image: DecorationImage(image: AssetImage(Images.imageLogo))),
-//       ),
-//       nextScreen: isLogged==true?HomeView():LoginView(),
-//       splashIconSize: 250,
-//       splashTransition: SplashTransition.fadeTransition,
-//       pageTransitionType: PageTransitionType.topToBottom,
-//     );
-//   }
-// }
+class SplashScreen extends StatelessWidget {
+  const SplashScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedSplashScreen(
+      splash: Container(
+        decoration: const BoxDecoration(
+            image: DecorationImage(image: AssetImage(Images.imageLogo))),
+      ),
+      nextScreen: HomeView(),
+      splashIconSize: 250,
+      splashTransition: SplashTransition.fadeTransition,
+      pageTransitionType: PageTransitionType.topToBottom,
+    );
+  }
+}
