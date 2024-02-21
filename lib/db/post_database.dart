@@ -37,14 +37,14 @@ class PostDatabase {
         ''');
   }
 
-  Future<Post> create(Post post) async{
+  Future<Post> create(Post post) async {
     final db = await instance.database;
 
     final id = await db.insert(tablePosts, post.toJson());
     return post.copy(id: id);
   }
 
-  Future<Post> readPost(int id) async{
+  Future<Post> readPost(int id) async {
     final db = await instance.database;
 
     final maps = await db.query(
@@ -53,13 +53,44 @@ class PostDatabase {
       where: '${PostFields.id} = ?',
       whereArgs: [id],
     );
-    if (maps.isNotEmpty){
+    if (maps.isNotEmpty) {
       return Post.fromJson(maps.first);
     } else {
       throw Exception('ID $id not found');
     }
   }
 
+  Future<List<Post>> readAllPosts() async {
+    final db = await instance.database;
+
+    final orderBy = '${PostFields.time} ASC';
+    // final result = await db.rawQuery('SELECT * FROM $tablePosts ORDER BY $orderBy');
+
+    final result = await db.query(tablePosts, orderBy: orderBy);
+
+    return result.map((json) => Post.fromJson(json)).toList();
+  }
+
+  Future<int> update(Post post) async {
+    final db = await instance.database;
+
+    return db.update(
+      tablePosts,
+      post.toJson(),
+      where: '${PostFields.id} = ?',
+      whereArgs: [post.id],
+    );
+  }
+
+  Future<int> delete(int id) async{
+    final db = await instance.database;
+
+    return await db.delete(
+      tablePosts,
+      where: '${PostFields.id} = ?',
+      whereArgs: [id],
+    );
+  }
 
   Future close() async {
     final db = await instance.database;
