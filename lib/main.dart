@@ -16,7 +16,7 @@ void main() async {
 
   runApp(MaterialApp(
     title: 'Navigation Basics',
-    home: isLogged == true ? SplashScreen() : LoginView(),
+    home: isLogged == true ? SplashScreen() : HomeView(),
     debugShowCheckedModeBanner: false,
   ));
 }
@@ -40,7 +40,7 @@ class SplashScreen extends StatelessWidget {
         decoration: const BoxDecoration(
             image: DecorationImage(image: AssetImage(Images.imageLogo))),
       ),
-      nextScreen: HomeView(),
+      nextScreen: LoginView(),
       splashIconSize: 250,
       splashTransition: SplashTransition.fadeTransition,
       pageTransitionType: PageTransitionType.topToBottom,

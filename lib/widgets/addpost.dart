@@ -12,6 +12,7 @@ class AddPostWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+          resizeToAvoidBottomInset: false,
       body: Container(
         child: Align(
           alignment: Alignment.center,
