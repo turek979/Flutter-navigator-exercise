@@ -1,16 +1,39 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_login_exercise/Views/Login_Page/login_view.dart';
+import 'package:flutter_login_exercise/db/post_database.dart';
+import 'package:flutter_login_exercise/model/post.dart';
 import 'package:flutter_login_exercise/util/app_colors.dart';
 import 'package:flutter_login_exercise/util/images.dart';
 import 'package:flutter_login_exercise/widgets/addpost.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_login_exercise/widgets/postfield.dart';
-import 'package:sqflite/sqflite.dart';
-import 'package:path/path.dart';
 
 
-class HomeView extends StatelessWidget {
+class HomeView extends StatefulWidget {
   const HomeView({super.key});
+
+  @override
+  State<HomeView> createState() => _HomeViewState();
+}
+
+class _HomeViewState extends State<HomeView> {
+  late List<Post> posts;
+  bool isLoading = false;
+
+  @override
+  void initState(){
+    super.initState();
+
+    refreshPosts();
+  }
+
+  Future refreshPosts() async{
+    setState(() => isLoading = true);
+
+    this.posts = await PostDatabase.instance.readAllPosts();
+
+    setState(() => isLoading = false);
+  }
 
   @override
   Widget build(BuildContext context) {
