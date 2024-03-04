@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_login_exercise/util/app_colors.dart';
 import 'package:flutter_login_exercise/util/images.dart';
-import 'package:sqflite/sqflite.dart';
-import 'package:path/path.dart';
-
 
 class PostField extends StatelessWidget {
   const PostField({super.key});
@@ -50,8 +47,8 @@ class PostField extends StatelessWidget {
             SizedBox(height: 5),
             Container(
               decoration: BoxDecoration(
-                // borderRadius: BorderRadius.circular(20),
-              ),
+                  // borderRadius: BorderRadius.circular(20),
+                  ),
               child: Container(
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
