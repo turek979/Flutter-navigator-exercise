@@ -1,6 +1,6 @@
 # flutter_login_exercise
 
-An exercise for my university designed to train using Navigator 1.0, SQLite, shared prefferences and splash screen.</br>
+An exercise for my university designed to train using Navigator 1.0, SQLite, shared prefferences and splash screen.</br> 
 
 ## Screenshots
 <div>
